@@ -1,0 +1,19 @@
+@frontmatter
+{
+    "title": "Shodo - Home",
+    "description": "A static site generator using Python and Jinja templates.",
+    "author": "Ryan Phillips"
+}
+@endfrontmatter
+
+<div class="container">
+<header class="site-header">
+    <h1 class="site-header__site-title">{{ config.metadata.title }}</h1>
+</header>
+<main>
+    <section>
+        {{ homepage.content }}
+    </section>
+</main>
+{% include 'partials/footer.jinja' %}
+</div>

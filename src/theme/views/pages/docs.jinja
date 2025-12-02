@@ -1,0 +1,20 @@
+@frontmatter
+{
+    "title": "Shodo - Docs",
+    "description": "Documentation for Shodo, a static site generator.",
+    "author": "Ryan Phillips",
+    "pagination": false
+}
+@endfrontmatter
+
+<div class="container">
+<header class="site-header">
+    <h1 class="site-header__site-title">Shodo - Docs</h1>
+</header>
+<main>
+    <section>
+        {{ docs.content }}
+    </section>
+</main>
+{% include 'partials/footer.jinja' %}
+</div>
