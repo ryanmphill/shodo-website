@@ -82,6 +82,7 @@ Both Jinja templates and Markdown files support front matter - metadata enclosed
 ```
 
 **Available front matter options:**
+
 - `title`: Page title meta (used in `<title>` tag)
 - `description`: Meta description for SEO
 - `author`: Page author meta
@@ -109,7 +110,8 @@ Both Jinja templates and Markdown files support front matter - metadata enclosed
      - `og_locale`
 
 **Available front matter options specifically for markdown pages:**
-_These values will get pulled from markdown page frontmatter and be included in the `article` object when the layout template is rendered._
+
+*These values will get pulled from markdown page frontmatter and be included in the `article` object when the layout template is rendered.*
 
 - `title`
 - `description`
@@ -253,6 +255,7 @@ Query and filter articles from the `markdown/articles` directory.
 ```
 
 **Filter operators:**
+
 - `equals`: Exact match
 - `contains`: Check if value is in a list
 - `starts_with`: String starts with value
@@ -286,8 +289,8 @@ Query JSON data from the `/store` directory with the same powerful filtering as 
 
 ```jinja
 {% for item in shodo_query_store(
-    collection="products",
     filters={
+        "collection": "products",
         "where": {"price": {"lt": 100}},
         "order_by": {"asc": "name"},
         "limit": 10
@@ -469,7 +472,7 @@ The `config` namespace has been reserved for setting default global values that 
 
 This is where all source paths and project settings are defined.
 
-NOTE: _Any path included in `root_template_paths` will have all of its children directories recursively added to the search path for Jinja2, so only top level paths should be included in the settings. In most cases, `"root_template_paths": [ "src/theme/views/" ]` should suffice, but it would be possible to add another path to `src/theme/assets/images` for example if you wanted to use the templates for working with an SVG but still wanted to maintain separation of concerns._
+NOTE: *Any path included in `root_template_paths` will have all of its children directories recursively added to the search path for Jinja2, so only top level paths should be included in the settings. In most cases, `"root_template_paths": [ "src/theme/views/" ]` should suffice, but it would be possible to add another path to `src/theme/assets/images` for example if you wanted to use the templates for working with an SVG but still wanted to maintain separation of concerns.*
 
 ## CLI Commands
 
@@ -496,7 +499,7 @@ This is useful for setting publication dates in article front matter:
 &#x40;endfrontmatter
 ```
 
-## Deploy to Netlify
+<h2 id="deploy-to-netlify">Deploy to Netlify</h2>
 1. Allow Netlify to install the project dependencies
 
 If you are using pipenv, Netflify will install dependencies directly from the `pipfile`. Otherwise, you will need to generate a `requirements.txt` file via `pip freeze > requirements.txt`, `poetry export --format=requirements.txt > requirements.txt`, `uv pip compile pyproject.toml -o requirements.txt`, or similar to allow the dependencies to be installed via pip.
