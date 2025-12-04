@@ -2,16 +2,25 @@
 {
     "title": "Shodo - Home",
     "description": "A static site generator using Python and Jinja templates.",
-    "author": "Ryan Phillips"
+    "author": "Ryan Phillips",
+    "head_extra": [
+        "<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css\" />"
+    ]
 }
 @endfrontmatter
 
 <div class="container">
-<header class="site-header">
-    <h1 class="site-header__site-title">{{ config.metadata.title }}</h1>
-</header>
+{% include 'partials/site-header.jinja' %}
 <main>
-    <section>
+    <header class="homepage-header">
+    <h1 class="page-header__title"><span>Shodo</span> <span class="secondary">Static Site Generator</span></h1>
+    <p class="homepage-header__subtitle">A flexible framework for generating static sites.</p>
+    <div class="cta-buttons">
+        <a class="cta-btn-primary" href="/docs">Get Started</a>
+        <a class="cta-btn-secondary" href="https://github.com/ryanmphill/shodo-static-gen">View <i class="devicon-github-original"></i> GitHub</a>
+    </div>
+    </header>
+    <section class="main-section">
         {{ homepage.content }}
     </section>
 </main>

@@ -8,22 +8,22 @@
 
 **Via pip**:
 ```bash
-pip install git+https://github.com/ryanmphill/shodo-static-gen.git@main#egg=shodo_ssg
+pip install shodo-ssg
 ```
 
 **Via pipenv**:
 ```bash
-pipenv install git+https://github.com/ryanmphill/shodo-static-gen.git@main#egg=shodo_ssg
+pipenv install shodo-ssg
 ```
 
 **Via Poetry**:
 ```bash
-poetry add git+https://github.com/ryanmphill/shodo-static-gen.git@main#egg=shodo_ssg
+poetry add shodo-ssg
 ```
 
 **Via uv**:
 ```bash
-uv pip install "shodo_ssg @ git+https://github.com/ryanmphill/shodo-static-gen.git@main"
+uv add shodo-ssg
 ```
 
 3. Once the package is installed, you can scaffold a new project using the command

@@ -7,7 +7,9 @@
     --color-secondary: rgb(255, 108, 59);
     --color-background: #fff;
     --color-text: #333333;
+    --color-text-secondary: #666666;
     --font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --color-border: #e0e0e0;
 }
 
 body {
@@ -33,6 +35,7 @@ a:hover {
     --color-text: #e0e0e0;
     --color-background: #260000;
     --color-primary: #d45858;
+    --color-border: #4a1a1a;
 }
 
 p, div, span, li, a {
@@ -69,7 +72,7 @@ h1, h2 {
     display: inline-block;
 }
 
-main {
+.main-section {
     padding: 20px 10px;
     max-width: 600px;
     margin: 0 auto;

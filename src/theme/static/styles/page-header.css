@@ -1,0 +1,18 @@
+.page-header {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 0 8px;
+}
+
+.page-header__title {
+    font-weight: bold;
+}
+
+@media (min-width: 300px) {
+    .page-header {
+        flex-wrap: nowrap;
+    }
+}
