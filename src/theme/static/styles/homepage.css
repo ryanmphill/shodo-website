@@ -1,0 +1,80 @@
+.homepage-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 8px;
+    /* box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); */
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    min-height: 18rem;
+    height: 80vh;
+    height: 80svh;
+}
+
+.homepage-header .page-header__title {
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-header .page-header__title .secondary {
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    margin-top: 8px;
+}
+
+.homepage-header__subtitle {
+    margin-top: 12px;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    color: var(--color-text-secondary);
+}
+
+.homepage-header .cta-buttons {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 16px;
+}
+
+.homepage-header .cta-buttons a {
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    padding-top: 11px;
+    transition: background-color 0.3s, color 0.3s, filter 0.3s;
+}
+
+.homepage-header a.cta-btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.homepage-header a.cta-btn-primary:hover {
+    /* background-color: darken(var(--color-primary), 10%); */
+    filter: brightness(90%);
+}
+
+.homepage-header a.cta-btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.homepage-header a.cta-btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.dark-theme .homepage-header {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+}
