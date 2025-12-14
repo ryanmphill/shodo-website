@@ -8,6 +8,7 @@ footer {
     align-items: center;
     box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1);
     margin-top: auto;
+    z-index: 3;
 }
 
 footer nav {
@@ -41,4 +42,18 @@ footer nav a span {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.dark-theme footer {
+    /* border-top: 1px solid var(--color-border); */
+    background-color: #1e0000;
+    background-color: #260000;
+}
+
+@media (prefers-color-scheme: dark) {
+    footer {
+        /* border-top: 1px solid var(--color-border); */
+        background-color: #1e0000;
+        background-color: #260000;
+    }
 }

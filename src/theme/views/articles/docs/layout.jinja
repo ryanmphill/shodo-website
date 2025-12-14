@@ -1,0 +1,33 @@
+@frontmatter
+{
+    "title": "Docs",
+    "author": "Shodo",
+    "body_class": "docs-page",
+    "description": "Documentation for Shodo, a static site generator."
+}
+@endfrontmatter
+
+<div class="container">
+{% include 'partials/site-header.jinja' %}
+<div class="docs-page__mobile-nav-container">
+    <button class="docs-sidebar__toggle" aria-label="Toggle documentation sidebar" aria-expanded="false">
+            ☰
+    </button>
+    <button class="this-page-sidebar__toggle" aria-label="Toggle this page sidebar" aria-expanded="false">
+            On this page ⏷
+    </button>
+</div>
+<div class="docs-page__content-wrapper">
+    {% include 'partials/docs-sidebar.jinja' %}
+    <main class="docs-page__main">
+        <section class="main-section docs-page__main-section">
+            <h1 class="page-header__title docs-page__title">{{ article.title }}</h1>
+            <div>
+                {{ article.content }}
+            </div>
+        </section>
+    </main>
+    {% include 'partials/this-page-sidebar.jinja' %}
+</div>
+{% include 'partials/footer.jinja' %}
+</div>

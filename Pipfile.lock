@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f3a78612f4fad0c8f5718a9be4c16ced35fcb0a0fa231779c41ff84fc410c125"
+            "sha256": "d341ae065c654a0b9541a9764d2097961f8ebc2116d39754cfd675ffc3487580"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -128,8 +128,12 @@
             "version": "==3.0.3"
         },
         "shodo-ssg": {
-            "git": "https://github.com/ryanmphill/shodo-static-gen.git",
-            "ref": "e26f791792ba69ce3a846daed0baa091ea80a36d"
+            "hashes": [
+                "sha256:110a0469a5fdd9a7a770cdeef4d80e1cb7e26ed0852e1fb0f0f2669372c77960",
+                "sha256:c601f5efd1990a8f4c917d8ea17118463ab8d721cb269876849e79edbff6b8b4"
+            ],
+            "index": "pypi",
+            "version": "==0.0.1a1"
         }
     },
     "develop": {}

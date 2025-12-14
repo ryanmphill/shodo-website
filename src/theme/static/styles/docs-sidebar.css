@@ -1,0 +1,142 @@
+:root:has(.docs-sidebar.sidebar--open) {
+  overflow: hidden;
+}
+
+.docs-sidebar {
+  border: 1px solid var(--color-border);
+  position: sticky;
+  top: 62px;
+  height: 100vh;
+  height: 100svh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  background: var(--color-background);
+  z-index: 3;
+
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  transform: translate(-620px, 0);
+  transition: transform 0.2s ease-in-out;
+  min-width: 80vw;
+}
+.docs-sidebar__title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.docs-sidebar.sidebar--open {
+  transform: translate(0, 0);
+  transition: transform 0.2s ease-in-out;
+}
+.docs-sidebar.sidebar--closed {
+  display: none;
+}
+/* Make rest of page inert when sidebar is open */
+body:has(.docs-sidebar.sidebar--open) .docs-sidebar ~ *,
+body:has(.docs-sidebar.sidebar--open) > * > footer,
+body:has(.docs-sidebar.sidebar--open) > * > main,
+body:has(.docs-sidebar.sidebar--open)
+  > *
+  > header
+  > *:not(.docs-sidebar__toggle),
+body:has(.docs-sidebar.sidebar--open) > * > .docs-page__mobile-nav-container {
+  pointer-events: none;
+  user-select: none;
+}
+body:has(.docs-sidebar.sidebar--open) .docs-sidebar ~ *::after,
+body:has(.docs-sidebar.sidebar--open) > * > footer::after,
+body:has(.docs-sidebar.sidebar--open) > * > main::after,
+body:has(.docs-sidebar.sidebar--open)
+  > *
+  > header
+  > *:not(.docs-sidebar__toggle)::after,
+body:has(.docs-sidebar.sidebar--open)
+  > *
+  > .docs-page__mobile-nav-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+.docs-sidebar__close-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.docs-sidebar__nav {
+  padding: 1rem;
+  width: 100%;
+}
+.docs-sidebar__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.docs-sidebar__item {
+  margin-bottom: 0.5rem;
+}
+.docs-sidebar__link {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.docs-sidebar__link:hover {
+  text-decoration: underline;
+}
+.docs-sidebar__toggle {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+.docs-sidebar__link::before {
+  /* Make link bold without shifting layout */
+  content: attr(data-content);
+  font-weight: bold; /* This sets the width */
+  text-decoration: underline;
+  display: block;
+  height: 0;
+  overflow: hidden; /* Hides the content visually */
+  visibility: hidden; /* Ensures it is hidden from view and screen readers */
+}
+.docs-sidebar__link--active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+  .docs-sidebar {
+    position: sticky;
+    top: 62px;
+    transform: translate(0, 0);
+    height: calc(100vh - 62px);
+    height: calc(100svh - 62px);
+    z-index: 2;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    display: block;
+    min-width: 208px;
+    max-width: 268px;
+    width: 25%;
+  }
+  .docs-sidebar.sidebar--closed {
+    display: block;
+  }
+  .docs-sidebar__toggle {
+    display: none;
+  }
+  .docs-sidebar__close-container {
+    display: none;
+  }
+}

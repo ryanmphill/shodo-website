@@ -9,10 +9,53 @@
 <div class="container">
 {% include 'partials/site-header.jinja' %}
 <main>
-    <section class="main-section">
-        <h1 class="page-header__title">Shodo - Docs</h1>
-        <div>
-            {{ docs.content }}
+    <section class="docs-archive__main-section">
+        <h1 class="page-header__title docs-archive__title">Docs</h1>
+        <div class="docs-archive__cards">
+            <a class="docs-archive__card" href="/docs/getting-started/">
+                <h2 class="docs-archive__card-title">Getting Started</h2>
+                <p class="docs-archive__card-description">Learn how to install and set up Shodo for your static site project.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/configuration/">
+                <h2 class="docs-archive__card-title">Configuration</h2>
+                <p class="docs-archive__card-description">Explore the configuration options available in Shodo to customize your site generation.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/templates/">
+                <h2 class="docs-archive__card-title">Templates</h2>
+                <p class="docs-archive__card-description">Understand how to create and use Jinja templates in Shodo.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/project-structure/">
+                <h2 class="docs-archive__card-title">Project Structure</h2>
+                <p class="docs-archive__card-description">Get familiar with the recommended project structure for Shodo static sites.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/frontmatter/">
+                <h2 class="docs-archive__card-title">Frontmatter</h2>
+                <p class="docs-archive__card-description">Learn about frontmatter and how to use it to manage metadata in Shodo.</p>
+            </a>
+            {# <a class="docs-archive__card" href="/docs/content-management/">
+                <h2 class="docs-archive__card-title">Content Management</h2>
+                <p class="docs-archive__card-description">Discover how to organize and manage your content effectively in Shodo.</p>
+            </a> #}
+            <a class="docs-archive__card" href="/docs/cli/">
+                <h2 class="docs-archive__card-title">Command Line Interface (CLI)</h2>
+                <p class="docs-archive__card-description">Get to know the Shodo CLI commands for building and managing your static site.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/template-api-functions/">
+                <h2 class="docs-archive__card-title">Template API Functions</h2>
+                <p class="docs-archive__card-description">Explore the built-in functions available for use in Shodo templates.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/pagination/">
+                <h2 class="docs-archive__card-title">Pagination</h2>
+                <p class="docs-archive__card-description">Learn how to implement pagination in your Shodo-generated static site.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/feed-guide/">
+                <h2 class="docs-archive__card-title">RSS/Atom Guide</h2>
+                <p class="docs-archive__card-description">Learn how to create and manage RSS/Atom feeds in Shodo.</p>
+            </a>
+            <a class="docs-archive__card" href="/docs/deployment/">
+                <h2 class="docs-archive__card-title">Deployment</h2>
+                <p class="docs-archive__card-description">Find out how to deploy your static site generated with Shodo.</p>
+            </a>
         </div>
     </section>
 </main>

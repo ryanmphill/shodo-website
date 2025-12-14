@@ -8,13 +8,13 @@
     border-bottom: 1px solid var(--color-border);
     background-color: var(--color-background);
     min-height: 18rem;
-    height: 80vh;
-    height: 80svh;
+    height: 86vh;
+    height: 86svh;
 }
 
 .homepage-header .page-header__title {
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
