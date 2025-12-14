@@ -7,7 +7,7 @@
   position: sticky;
   top: 62px;
   height: 100vh;
-  height: 100svh;
+  height: 100dvh;
   overflow-y: auto;
   scrollbar-width: thin;
   background: var(--color-background);
@@ -62,7 +62,7 @@ body:has(.docs-sidebar.sidebar--open)
   left: 0;
   width: 100vw;
   height: 100vh;
-  height: 100svh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.2);
   z-index: 0;
 }
