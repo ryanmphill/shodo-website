@@ -50,6 +50,7 @@ Finally, we add a `limit` and `offset` to the query with some convenient values 
 ## Pagination Object
 
 The `pagination` object provides:
+
 - `pagination.per_page`: Value provided in the `per_page` frontmatter
 - `pagination.current_page`: Current page number
 - `pagination.total_pages`: Total number of pages
@@ -64,5 +65,6 @@ The `pagination` object provides:
 Make sure to provide `limit` and `offset` values in the query, with `pagination.per_page` passed as the `limit`, and `pagination.per_page * (pagination.current_page - 1)` as the `offset`
 
 Pages are automatically generated at:
+
 - First page: `/blog/index.html`
 - Subsequent pages: `/blog/page/2/index.html`, `/blog/page/3/index.html`, etc.

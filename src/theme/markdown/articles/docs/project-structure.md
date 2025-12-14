@@ -67,7 +67,13 @@ Any markdown files added to the `/markdown/partials` directory will be exposed t
 
 In order to avoid any naming conflicts, The articles further nested in directories within "articles/partials/" will have a variable prefix that is the accumulated names of the preceding directories in dot notation (excluding '/partials' and higher). 
 
-For example, a markdown file located in `markdown/partials/collections/quotes/my_quote.md`, will be exposed to all templates with the following variable using the jinja variable syntax:
+For example, a markdown file located in 
+
+```
+markdown/partials/collections/quotes/my_quote.md
+```
+
+ will be exposed to all templates with the following variable using the jinja variable syntax:
 
 ```
 {{ collections.quotes.my_quote }}
@@ -76,11 +82,29 @@ For example, a markdown file located in `markdown/partials/collections/quotes/my
 ### Generating full pages from markdown
 
 In addition to partial variables that can be included in templates, entire new pages can also be automatically be generated from markdown files added to the 
-`markdown/articles` directory. The url path to the page will match file path following everything after `markdown/articles/`, so `markdown/articles/blog/hello.md` will be accessible at `{siteUrl}/blog/hello`.
+`markdown/articles` directory. The url path to the page will match file path following everything after `markdown/articles/`, so 
+
+```
+markdown/articles/blog/hello.md
+``` 
+
+will be accessible at `{siteUrl}/blog/hello`.
 
 Articles from the `markdown/articles` directory are rendered with a reusable template defined in `views/articles/` Just add a `layout.jinja` file under a subdirectory that matches the subdirectory tree used in `markdown/articles`, or simply define a `layout.jinja` at the root of `views/articles` if you want to use a single layout template for all articles. In the `layout.jinja` file, control where you would like your content to be dynamically inserted by passing in the reserved `{{ article }}` variable.
 
-The site builder will always match up the layout template that is closest in the tree, so `markdown/articles/blog/updates/new-post.md` would be matched with `views/articles/blog/layout.jinja` if no layout is defined for the `updates` directory.
+The site builder will always match up the layout template that is closest in the tree, so 
+
+```
+markdown/articles/blog/updates/new-post.md
+``` 
+
+would be matched with 
+
+```
+views/articles/blog/layout.jinja
+``` 
+
+if no layout is defined for the `updates` directory.
 
 ```
 ├── markdown/
