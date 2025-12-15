@@ -112,9 +112,10 @@ if no layout is defined for the `updates` directory.
 ```
 ├── markdown/
     └── articles/
-        ├── blog/
-        ├── updates/
-        └── new-post.md
+        └── blog/
+            ├──updates/
+            │   └── new-post.md
+            └── new-post.md
 ```
 
 ```
@@ -122,9 +123,9 @@ if no layout is defined for the `updates` directory.
     └── articles/
         ├── layout.jinja # (default root layout for all markdown 'articles')
         └── blog/
-            ├── layout.jinja # (Maps to markdown/articles/blog, overwrites root layout)
             ├── updates/
-            └── layout.jinja # (Maps to markdown/articles/blog/updates, overwrites other previous layouts in tree)
+            │   └── layout.jinja # (Maps to markdown/articles/blog/updates, overwrites other previous layouts in tree)
+            └── layout.jinja # (Maps to markdown/articles/blog, overwrites root layout)
 ```
 
 ### layout.jinja
