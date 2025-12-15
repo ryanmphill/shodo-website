@@ -12,7 +12,25 @@ Shodo always generates static websites, which means they can be deployed just ab
 
 ### Prepare Dependencies
 
-1. If you are using pipenv, Netflify will install dependencies directly from the `pipfile`. Otherwise, you will need to generate a `requirements.txt` file via `pip freeze > requirements.txt`, `poetry export --format=requirements.txt > requirements.txt`, `uv pip compile pyproject.toml -o requirements.txt`, or similar to allow the dependencies to be installed via pip.
+1. If you are using pipenv, Netflify will install dependencies directly from the `pipfile`. Otherwise, you will need to generate a `requirements.txt` file via 
+
+```
+pip freeze > requirements.txt
+```
+
+or
+
+```
+poetry export --format=requirements.txt > requirements.txt
+```
+
+or
+
+ ```
+ uv pip compile pyproject.toml -o requirements.txt
+ ```
+
+or similar to allow the dependencies to be installed via pip.
 
 #### pipenv
 

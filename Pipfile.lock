@@ -129,11 +129,11 @@
         },
         "shodo-ssg": {
             "hashes": [
-                "sha256:110a0469a5fdd9a7a770cdeef4d80e1cb7e26ed0852e1fb0f0f2669372c77960",
-                "sha256:c601f5efd1990a8f4c917d8ea17118463ab8d721cb269876849e79edbff6b8b4"
+                "sha256:10eca063f990ed71b312c773fa1da3c29d66e96839137dea25041abe35ea45e0",
+                "sha256:deb2b6a429b9f296b376d8d2f1169eed00b4e198e28694fd24471e5c3c0a6ae5"
             ],
             "index": "pypi",
-            "version": "==0.0.1a1"
+            "version": "==0.0.1a2"
         }
     },
     "develop": {}

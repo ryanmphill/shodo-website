@@ -1,4 +1,4 @@
-Shodo is a framework for rapidly building a static site from markdown files, json, and Jinja templates. Simply make changes to your site in the `src` directory, run the build command, and access the build in the `dist` directory. [Easily deploy to Netlify](/docs#deploy-to-netlify) in just a few clicks.
+Shodo is a framework for rapidly building a static site from markdown files, json, and Jinja templates. Simply make changes to your site in the `src` directory, run the build command, and access the build in the `dist` directory. [Easily deploy to Netlify](/docs/deployment/#netlify) in just a few clicks.
 
 
 

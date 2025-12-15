@@ -1,13 +1,13 @@
-:root:has(.docs-sidebar.sidebar--open) {
-  overflow: hidden;
+:root:has(.sidebar--open) {
+  overflow: clip;
 }
 
-.docs-sidebar {
+.this-page-sidebar {
   border: 1px solid var(--color-border);
   position: sticky;
   top: 62px;
   height: 100vh;
-  height: 100svh;
+  height: 100dvh;
   overflow-y: auto;
   scrollbar-width: thin;
   background: var(--color-background);
@@ -16,44 +16,40 @@
   position: fixed;
   z-index: 4;
   top: 0;
-  transform: translate(-620px, 0);
+  right: 0;
+  transform: translate(620px, 0);
   transition: transform 0.2s ease-in-out;
   min-width: 80vw;
 }
-.docs-sidebar__title {
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 1rem;
-  padding: 0 0 1rem 0;
-  border-bottom: 1px solid var(--color-border);
-}
-.docs-sidebar.sidebar--open {
+.this-page-sidebar.sidebar--open {
   transform: translate(0, 0);
   transition: transform 0.2s ease-in-out;
 }
-.docs-sidebar.sidebar--closed {
+.this-page-sidebar.sidebar--closed {
   display: none;
 }
 /* Make rest of page inert when sidebar is open */
-body:has(.docs-sidebar.sidebar--open) .docs-sidebar ~ *,
-body:has(.docs-sidebar.sidebar--open) > * > footer,
-body:has(.docs-sidebar.sidebar--open) > * > main,
-body:has(.docs-sidebar.sidebar--open)
+body:has(.this-page-sidebar.sidebar--open) .this-page-sidebar ~ *,
+body:has(.this-page-sidebar.sidebar--open) > * > footer,
+body:has(.this-page-sidebar.sidebar--open) > * > main,
+body:has(.this-page-sidebar.sidebar--open)
   > *
   > header
-  > *:not(.docs-sidebar__toggle),
-body:has(.docs-sidebar.sidebar--open) > * > .docs-page__mobile-nav-container {
+  > *:not(.this-page-sidebar__toggle),
+body:has(.this-page-sidebar.sidebar--open)
+  > *
+  > .docs-page__mobile-nav-container {
   pointer-events: none;
   user-select: none;
 }
-body:has(.docs-sidebar.sidebar--open) .docs-sidebar ~ *::after,
-body:has(.docs-sidebar.sidebar--open) > * > footer::after,
-body:has(.docs-sidebar.sidebar--open) > * > main::after,
-body:has(.docs-sidebar.sidebar--open)
+body:has(.this-page-sidebar.sidebar--open) .this-page-sidebar ~ *::after,
+body:has(.this-page-sidebar.sidebar--open) > * > footer::after,
+body:has(.this-page-sidebar.sidebar--open) > * > main::after,
+body:has(.this-page-sidebar.sidebar--open)
   > *
   > header
-  > *:not(.docs-sidebar__toggle)::after,
-body:has(.docs-sidebar.sidebar--open)
+  > *:not(.this-page-sidebar__toggle)::after,
+body:has(.this-page-sidebar.sidebar--open)
   > *
   > .docs-page__mobile-nav-container::after {
   content: "";
@@ -62,44 +58,51 @@ body:has(.docs-sidebar.sidebar--open)
   left: 0;
   width: 100vw;
   height: 100vh;
-  height: 100svh;
+  height: 100dvh;
   background: rgba(0, 0, 0, 0.2);
   z-index: 0;
 }
-.docs-sidebar__close-container {
+.this-page-sidebar__close-container {
   display: flex;
   justify-content: flex-end;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--color-border);
 }
-.docs-sidebar__nav {
+.this-page-sidebar__title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem;
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.this-page-sidebar__nav {
   padding: 1rem;
   width: 100%;
 }
-.docs-sidebar__list {
+.this-page-sidebar__list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.docs-sidebar__item {
+.this-page-sidebar__item {
   margin-bottom: 0.5rem;
 }
-.docs-sidebar__link {
+.this-page-sidebar__link {
   text-decoration: none;
   color: var(--color-primary);
   font-weight: 500;
 }
-.docs-sidebar__link:hover {
+.this-page-sidebar__link:hover {
   text-decoration: underline;
 }
-.docs-sidebar__toggle {
+.this-page-sidebar__toggle {
   border: none;
   background: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--color-primary);
 }
-.docs-sidebar__link::before {
+.this-page-sidebar__link::before {
   /* Make link bold without shifting layout */
   content: attr(data-content);
   font-weight: bold; /* This sets the width */
@@ -109,13 +112,26 @@ body:has(.docs-sidebar.sidebar--open)
   overflow: hidden; /* Hides the content visually */
   visibility: hidden; /* Ensures it is hidden from view and screen readers */
 }
-.docs-sidebar__link--active {
+.this-page-sidebar__link--active {
   font-weight: 700;
   text-decoration: underline;
 }
+.this-page-sidebar__item--h3 {
+  margin-left: 10px;
+  font-size: 0.95em;
+}
+.this-page-sidebar__item--h3 > a {
+  font-size: 0.95em;
+}
+.this-page-sidebar__item--h4 {
+  margin-left: 20px;
+}
+.this-page-sidebar__item--h4 > a {
+  font-size: 0.9em;
+}
 
 @media (min-width: 992px) {
-  .docs-sidebar {
+  .this-page-sidebar {
     position: sticky;
     top: 62px;
     transform: translate(0, 0);
@@ -124,19 +140,19 @@ body:has(.docs-sidebar.sidebar--open)
     z-index: 2;
     border-top: none;
     border-bottom: none;
-    border-left: none;
+    border-right: none;
     display: block;
     min-width: 208px;
     max-width: 268px;
     width: 25%;
   }
-  .docs-sidebar.sidebar--closed {
+  .this-page-sidebar.sidebar--closed {
     display: block;
   }
-  .docs-sidebar__toggle {
+  .this-page-sidebar__toggle {
     display: none;
   }
-  .docs-sidebar__close-container {
+  .this-page-sidebar__close-container {
     display: none;
   }
 }

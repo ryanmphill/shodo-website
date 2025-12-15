@@ -13,20 +13,21 @@ project-root/
 ├── src/
 │   ├── store/ # Any JSON data to expose to templates
 │   │   └── config.json # Recommended for global metadata
-│   ├── theme/
-│   │   └── markdown/
-|   │   │   ├── articles/ # Render full pages from markdown
-|   │   │   └── partials/ # Partial md content to include in templates
-│   │   ├── static/
-|   │   │   ├── assets/ # Fonts, Images, etc.
-|   │   │   ├── scripts/
-|   │   │   └── styles/
-│   │   ├── views/
-|   │   │   ├── articles/
-|   |   │   │   └── layout.jinja # Layout for markdown/articles content
-|   │   │   ├── pages/ # Render full pages from templates
-|   │   │   ├── partials/ # Partial templates to include in other templates
-|   │   │   └── home.jinja # Root page of site
+│   ├── markdown/
+|   │   ├── articles/ # Render full pages from markdown
+|   │   └── partials/ # Partial md content to include in templates
+│   ├── static/
+|   │   ├── assets/ # Fonts, Images, etc.
+|   │   ├── scripts/
+|   │   └── styles/
+│   ├── views/
+|   │   ├── articles/
+|   │   │   └── layout.jinja # Layout for markdown/articles content
+|   │   ├── pages/ # Render full pages from templates
+|   │   ├── partials/ # Partial templates to include in other templates
+|   │   └── home.jinja # Root page of site
+|   ├── root/
+│   │   └── # Anything in this directory is copied as-is to the root
 │   └── favicon.ico
 │
 ├── build_settings.json # Build configuration
@@ -34,9 +35,9 @@ project-root/
 └── site_builder.py
 ```
 
-## Root Page
+## Home Page
 
-The root page `index.html` of the site is written from `src/themes/views/home.jinja`
+The root page `index.html` of the site is written from `src/views/home.jinja`
 
 ## Pages
 
@@ -67,7 +68,13 @@ Any markdown files added to the `/markdown/partials` directory will be exposed t
 
 In order to avoid any naming conflicts, The articles further nested in directories within "articles/partials/" will have a variable prefix that is the accumulated names of the preceding directories in dot notation (excluding '/partials' and higher). 
 
-For example, a markdown file located in `markdown/partials/collections/quotes/my_quote.md`, will be exposed to all templates with the following variable using the jinja variable syntax:
+For example, a markdown file located in 
+
+```
+markdown/partials/collections/quotes/my_quote.md
+```
+
+ will be exposed to all templates with the following variable using the jinja variable syntax:
 
 ```
 {{ collections.quotes.my_quote }}
@@ -76,11 +83,31 @@ For example, a markdown file located in `markdown/partials/collections/quotes/my
 ### Generating full pages from markdown
 
 In addition to partial variables that can be included in templates, entire new pages can also be automatically be generated from markdown files added to the 
-`markdown/articles` directory. The url path to the page will match file path following everything after `markdown/articles/`, so `markdown/articles/blog/hello.md` will be accessible at `{siteUrl}/blog/hello`.
+`markdown/articles` directory. The url path to the page will match file path following everything after `markdown/articles/`, so 
+
+```
+markdown/articles/blog/hello.md
+``` 
+
+will be accessible at `{siteUrl}/blog/hello`.
 
 Articles from the `markdown/articles` directory are rendered with a reusable template defined in `views/articles/` Just add a `layout.jinja` file under a subdirectory that matches the subdirectory tree used in `markdown/articles`, or simply define a `layout.jinja` at the root of `views/articles` if you want to use a single layout template for all articles. In the `layout.jinja` file, control where you would like your content to be dynamically inserted by passing in the reserved `{{ article }}` variable.
 
-The site builder will always match up the layout template that is closest in the tree, so `markdown/articles/blog/updates/new-post.md` would be matched with `views/articles/blog/layout.jinja` if no layout is defined for the `updates` directory.
+The site builder will always match up the layout template that is closest in the tree, so 
+
+```
+markdown/articles/blog/updates/new-post.md
+``` 
+
+would be matched with 
+
+```
+views/articles/blog/layout.jinja
+``` 
+
+if no layout is defined for the `updates` directory.
+
+#### Example:
 
 ```
 ├── markdown/
@@ -100,7 +127,7 @@ The site builder will always match up the layout template that is closest in the
             └── layout.jinja # (Maps to markdown/articles/blog/updates, overwrites other previous layouts in tree)
 ```
 
-#### layout.jinja
+### layout.jinja
 
 The `layout.jinja` is just a normal jinja template, but the `{{ article }}` variable has been reserved for passing in the content from each file in `markdown/articles`. Simply define whatever repeated layout you would like to wrap the `{{ article }}` content, such as a header and footer.
 

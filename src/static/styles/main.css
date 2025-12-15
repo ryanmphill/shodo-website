@@ -111,6 +111,11 @@ code:not(pre code) {
     border-radius: 3px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.95em;
+    overflow-x: auto;
+    display: inline-flex;
+    scrollbar-width: thin;
+    max-width: 100%;
+    line-height: normal;
 }
 
 .dark-theme code:not(pre code) {
