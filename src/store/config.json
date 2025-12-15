@@ -4,9 +4,10 @@
             "title": "Shodo - Static Site Generator",
             "description": "Shodo is a static site generator that uses Markdown and JSON files to generate a static site.",
             "author": "Ryan Phillips",
-            "google_font_link": "https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            "google_font_link": "https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap",
+            "og_image": "https://shodo.dev/static/assets/images/shodo-social-preview-1200x630.png"
         },
-        "url_origin": "https://my-shodo-site.dev",
+        "url_origin": "https://shodo.dev",
         "timezone": "America/Chicago"
     }
 }
