@@ -7,7 +7,7 @@
             "google_font_link": "https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap",
             "og_image": "https://shodo.dev/static/assets/images/shodo-social-preview-1200x630.png",
             "og_url": "https://shodo.dev",
-            "og_title": "Shodo - Static Site Generator",
+            "og_title": "Shodo | Static Site Generator",
             "og_description": "A flexible framework for generating static sites using Python, Jinja, and Markdown. Build fast, SEO-friendly websites with powerful templating, JSON data queries, pagination, and RSS feed support.",
             "og_type": "website"
         },
