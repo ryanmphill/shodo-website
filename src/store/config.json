@@ -9,7 +9,8 @@
             "og_url": "https://shodo.dev",
             "og_title": "Shodo | Static Site Generator",
             "og_description": "A flexible framework for generating static sites using Python, Jinja, and Markdown. Build fast, SEO-friendly websites with powerful templating, JSON data queries, pagination, and RSS feed support.",
-            "og_type": "website"
+            "og_type": "website",
+            "og_site_name": "Shodo"
         },
         "url_origin": "https://shodo.dev",
         "timezone": "America/Chicago"
