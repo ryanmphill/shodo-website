@@ -13,20 +13,21 @@ project-root/
 ├── src/
 │   ├── store/ # Any JSON data to expose to templates
 │   │   └── config.json # Recommended for global metadata
-│   ├── theme/
-│   │   └── markdown/
-|   │   │   ├── articles/ # Render full pages from markdown
-|   │   │   └── partials/ # Partial md content to include in templates
-│   │   ├── static/
-|   │   │   ├── assets/ # Fonts, Images, etc.
-|   │   │   ├── scripts/
-|   │   │   └── styles/
-│   │   ├── views/
-|   │   │   ├── articles/
-|   |   │   │   └── layout.jinja # Layout for markdown/articles content
-|   │   │   ├── pages/ # Render full pages from templates
-|   │   │   ├── partials/ # Partial templates to include in other templates
-|   │   │   └── home.jinja # Root page of site
+│   ├── markdown/
+|   │   ├── articles/ # Render full pages from markdown
+|   │   └── partials/ # Partial md content to include in templates
+│   ├── static/
+|   │   ├── assets/ # Fonts, Images, etc.
+|   │   ├── scripts/
+|   │   └── styles/
+│   ├── views/
+|   │   ├── articles/
+|   │   │   └── layout.jinja # Layout for markdown/articles content
+|   │   ├── pages/ # Render full pages from templates
+|   │   ├── partials/ # Partial templates to include in other templates
+|   │   └── home.jinja # Root page of site
+|   ├── root/
+│   │   └── # Anything in this directory is copied as-is to the root
 │   └── favicon.ico
 │
 ├── build_settings.json # Build configuration
@@ -34,9 +35,9 @@ project-root/
 └── site_builder.py
 ```
 
-## Root Page
+## Home Page
 
-The root page `index.html` of the site is written from `src/themes/views/home.jinja`
+The root page `index.html` of the site is written from `src/views/home.jinja`
 
 ## Pages
 
@@ -106,6 +107,8 @@ views/articles/blog/layout.jinja
 
 if no layout is defined for the `updates` directory.
 
+#### Example:
+
 ```
 ├── markdown/
     └── articles/
@@ -124,7 +127,7 @@ if no layout is defined for the `updates` directory.
             └── layout.jinja # (Maps to markdown/articles/blog/updates, overwrites other previous layouts in tree)
 ```
 
-#### layout.jinja
+### layout.jinja
 
 The `layout.jinja` is just a normal jinja template, but the `{{ article }}` variable has been reserved for passing in the content from each file in `markdown/articles`. Simply define whatever repeated layout you would like to wrap the `{{ article }}` content, such as a header and footer.
 

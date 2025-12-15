@@ -20,20 +20,20 @@ Here is an example of a `build_settings.json` that is provided in the initial pr
 {
     "===The highest level directories to load templates from===": "",
     "root_template_paths": [
-        "src/theme/views"
+        "src/views"
     ],
     "===The directory containing markdown content files===": "",
-    "markdown_path": "src/theme/markdown",
+    "markdown_path": "src/markdown",
     "===The directory containing JSON configuration files===": "",
     "json_config_path": "src/store",
     "===The path to the src favicon file===": "",
     "favicon_path": "src/favicon.ico",
     "===The directory containing static script files===": "",
-    "scripts_path": "src/theme/static/scripts",
+    "scripts_path": "src/static/scripts",
     "===The directory containing static style files===": "",
-    "styles_path": "src/theme/static/styles",
+    "styles_path": "src/static/styles",
     "===The directory containing any static asset files===": "",
-    "assets_path": "src/theme/static/assets",
+    "assets_path": "src/static/assets",
     "===The directory containing files and directories to be copied directly to the root of the build directory===": "",
     "root_files_path": "src/root",
     "===The output build directory===": "",
@@ -43,7 +43,9 @@ Here is an example of a `build_settings.json` that is provided in the initial pr
 }
 ```
 
-In most cases, this can be left as it is, but it can be customized however you like.
+In most cases, this can be left as it is, but it can be customized however you like. For the purposes of this documentation, these file paths may be referred to occasionally. Just know that you can rename them to whatever you would prefer.
+
+*One thing to note is that while you can define multiple root paths for templates in `root_template_paths`, the first one listed in the array will be the one that Shodo reads the `partials`, `pages`, and `articles` subdirectories from. This will be your main "views" directory (although you may call it whatever you like). Then, additional paths can be added to the template context if, for example, you wanted an entirely separate path for just rendering SVG via Jinja.*
 
 ## Store Directory Config
 

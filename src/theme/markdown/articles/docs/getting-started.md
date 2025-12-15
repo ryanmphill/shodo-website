@@ -62,11 +62,11 @@ and you can find your static site located in the `dist/` directory
 
 ## How it works (brief overview)
 
-First, there is the main home page template located at `src/theme/views/home.jinja` that can render partial sub-views, which can either be other Jinja2 templates located in `src/theme/views/partials`, or markdown files located in `src/theme/markdown/partials`. 
+First, there is the main home page template located at `src/views/home.jinja` that can render partial sub-views, which can either be other Jinja2 templates located in `src/views/partials`, or markdown files located in `src/markdown/partials`. 
 
-Additional pages can be created by adding a new file with a `.jinja` extension to the `src/theme/views/pages` directory.
+Additional pages can be created by adding a new file with a `.jinja` extension to the `src/views/pages` directory.
 
-Pages can also be [generated entirely from markdown files](/docs/project-structure/#generating-full-pages-from-markdown) located in `src/theme/markdown/articles`, and will be rendered through a `layout.jinja` file located in `src/theme/views/articles` via the `{{ article.content}}` placeholder.
+Pages can also be [generated entirely from markdown files](/docs/project-structure/#generating-full-pages-from-markdown) located in `src/markdown/articles`, and will be rendered through a `layout.jinja` file located in `src/views/articles` via the `{{ article.content}}` placeholder.
 
 ## Next Steps
 
