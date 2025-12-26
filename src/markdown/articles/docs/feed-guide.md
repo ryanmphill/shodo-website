@@ -10,7 +10,7 @@ Generate RSS or Atom feeds by creating an XML template with `file_type: xml` in 
 
 ## Example
 
-```jinja
+```html+jinja
 &#x40;frontmatter
 {
     "file_type": "xml"
@@ -39,7 +39,7 @@ Generate RSS or Atom feeds by creating an XML template with `file_type: xml` in 
             <guid isPermaLink="true">{{ post.link }}</guid>
             <pubDate>{{ get_rfc822(post.published_datetime) }}</pubDate>
             <content:encoded>
-                <![CDATA[{{ rel_to_abs(post.content, "https://example.com) }}]]>
+                <![CDATA[{{ rel_to_abs(post.content, "https://example.com") }}]]>
             </content:encoded>
         </item>
         {% endfor %}

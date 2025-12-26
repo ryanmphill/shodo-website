@@ -16,7 +16,7 @@ The second is under the reserved `config` namespace in the `src/store` directory
 
 Here is an example of a `build_settings.json` that is provided in the initial project template.
 
-```
+```json
 {
     "===The highest level directories to load templates from===": "",
     "root_template_paths": [
@@ -53,7 +53,7 @@ JSON in the `/store` directory is used to globally pass any data you would like 
 
 Example:
 
-```
+```json
 {
     "config": {
         "metadata": {

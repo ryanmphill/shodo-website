@@ -13,7 +13,7 @@ Shodo provides several built-in functions that can be called from within templat
 Query and filter articles from the `markdown/articles` directory.
 
 **Basic usage:**
-```jinja
+```html+jinja
 {% for post in shodo_get_articles() %}
     <h2>{{ post.title }}</h2>
     <p>{{ post.excerpt }}</p>
@@ -22,7 +22,7 @@ Query and filter articles from the `markdown/articles` directory.
 ```
 
 **With filters:**
-```jinja
+```html+jinja
 {% for post in shodo_get_articles(filters={
     "where": {
         "category": "technology",
@@ -53,7 +53,7 @@ Query and filter articles from the `markdown/articles` directory.
 - `regex`: Regular expression match
 
 **Logical operators:**
-```jinja
+```html+jinja
 {% for post in shodo_get_articles(filters={
     "where": {
         "and": [
@@ -72,7 +72,7 @@ Query and filter articles from the `markdown/articles` directory.
 
 Query JSON data from the `/store` directory with the same powerful filtering as `shodo_get_articles()`. The only difference with the `filters` argument is that `collection` is required, the value of which is a key in your [JSON store](/docs/project-structure/#json-store).
 
-```jinja
+```html+jinja
 {% for item in shodo_query_store(
     filters={
         "collection": "products",
@@ -97,7 +97,7 @@ Extract a text excerpt from content with a specified character limit.
 
 Convert a datetime to RFC 822 format (required for RSS feeds).
 
-```jinja
+```html+jinja
 <pubDate>{{ get_rfc822(article.published_datetime) }}</pubDate>
 ```
 
@@ -113,6 +113,6 @@ Convert relative URLs to absolute URLs (required for RSS feeds). Uses `config.ur
 
 Get the current datetime during build.
 
-```jinja
+```html+jinja
 <lastBuildDate>{{ get_rfc822(current_dt()) }}</lastBuildDate>
 ```
