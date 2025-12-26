@@ -25,9 +25,9 @@ We'll show a quick and easy example using [ESBuild](https://esbuild.github.io/ge
 
 Lets go into `build_settings.json` and change the script value:
 
-```js
+```JavaScript
 {
-    # ...other settings,
+    // ...other settings,
     "scripts_path": "src/static/scripts/dist"
 }
 ```
@@ -45,7 +45,7 @@ Visit the [ESBuild](https://esbuild.github.io/getting-started/) docs and install
 
 Now, create `esbuild.config.mjs` at the root of your project and paste in the following:
 
-```js
+```JavaScript
 import * as esbuild from "esbuild";
 
 const isWatch = process.argv.includes("--watch");
@@ -139,7 +139,7 @@ if (isDev) {
 
 Finally, go into `site_builder.py` at the root of the project and add
 
-```
+```Python
 os.system("npm run build")
 ```
 
@@ -147,7 +147,7 @@ right before the `build_static_site` function. (Replace `npm` if you are using a
 
 The final result will look something like this:
 
-```py
+```Python
 """
 This module builds a static site in the destination directory from jinja2
 templates and all static assets
@@ -166,7 +166,7 @@ if __name__ == "__main__":
 
 And in `serve.py`, you can include the source map:
 
-```
+```Python
 """
 This module script is similar to running `python3 -m http.server --bind 127.0.0.1 3000 -d dist`
 from the command line, but automatically runs the build script prior to starting up

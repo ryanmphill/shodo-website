@@ -18,7 +18,7 @@ Jinja allows you to do mostly what any other templating engine does, so most of 
 
 Just like in Python, you can use `if` statements directly in Jinja templates for conditional rendering or to ensure a value exists.
 
-```
+```html+jinja
 {% if animal.dog %}
     Woof!
 {% elif animal.cow %}
@@ -32,7 +32,7 @@ Just like in Python, you can use `if` statements directly in Jinja templates for
 
 Loop over items in a sequence just like in any programming language
 
-```
+```html+jinja
 <h1>Animals</h1>
 <ul>
 {% for animal in animals %}
@@ -45,7 +45,7 @@ Loop over items in a sequence just like in any programming language
 
 Import a partial template into another one:
 
-```
+```html+jinja
 {% include 'partials/nav.jinja' %}
 ```
 

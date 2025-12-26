@@ -10,7 +10,7 @@ Both Jinja templates and Markdown files support front matter - metadata enclosed
 
 ## Example
 
-```jinja
+```
 &#x40;frontmatter
 {
     "title": "My Page Title",
@@ -75,7 +75,7 @@ Both Jinja templates and Markdown files support front matter - metadata enclosed
 - `tags` (`str[]`)
 - `published_datetime` (will also generate `published_dt_local` if timezone is set) (`str`)
 - `modified_datetime` (will also generate `modified_dt_local` if timezone is set) (`str`)
-- `draft` (default "false") (`str("true" | "false")`) *I'll fix this soon so it's a boolean!*
+- `draft` (default "false") (`bool`)
 - `image` (url) (`str`)
 - `image_alt` (`str`)
 - `extra` (optional nested json of custom metadata)
@@ -88,7 +88,7 @@ Since frontmatter can potentially be defined multiple places for the same page, 
 
 For the frontmatter itself, the general pattern is that it will be overwritten by any frontmatter that comes after it on the main rendering page. So, for example, if you had `main-page.jinja` with the following contents:
 
-```jinja
+```html+jinja
 &#x40;frontmatter
 {
     "title": "Base Title",
@@ -104,7 +104,7 @@ For the frontmatter itself, the general pattern is that it will be overwritten b
 
 where `first-partial.jinja` contains:
 
-```jinja
+```html+jinja
 &#x40;frontmatter
 {
     "title": "First Partial Title",
@@ -118,7 +118,7 @@ where `first-partial.jinja` contains:
 
 and `second-partial.jinja` contains:
 
-```jinja
+```html+jinja
 &#x40;frontmatter
 {
     "title": "Second Partial Title",

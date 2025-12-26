@@ -76,7 +76,7 @@ markdown/partials/collections/quotes/my_quote.md
 
  will be exposed to all templates with the following variable using the jinja variable syntax:
 
-```
+```html+jinja
 {{ collections.quotes.my_quote }}
 ```
 
@@ -134,7 +134,7 @@ The `layout.jinja` is just a normal jinja template, but the `{{ article }}` vari
 
 Here is an example layout template:
 
-```jinja
+```html+jinja
 &#x40;frontmatter
 {
     "title": "Blog Layout",
@@ -185,7 +185,7 @@ Other than that one key/value pair, you can add whatever else you'd like to this
 
 Then in the templates, you can access the data
 
-```jinja
+```html+jinja
 <div>
 {% for animal in animals %}
     <p>{{ animal.name }} is a {{ animal.type }}</p>
@@ -220,7 +220,7 @@ For avoiding naming conflicts, it can be helpful to nest JSON. Nested values can
 
 Now, `my_animals` acts as a namespace for the data:
 
-```jinja
+```html+jinja
 <div>
 {% for animal in my_animals.animals %}
     <p>{{ animal.name }} is a {{ animal.type }}</p>

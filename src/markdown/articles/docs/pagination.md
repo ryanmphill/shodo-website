@@ -18,7 +18,7 @@ Finally, we add a `limit` and `offset` to the query with some convenient values 
 
 ### Example
 
-```jinja
+```html+jinja
 &#x40;frontmatter
 {
     "title": "Blog Archive",
@@ -44,7 +44,7 @@ Finally, we add a `limit` and `offset` to the query with some convenient values 
 {% endfor %}
 
 {# Optionally include generated pagination navigation HTML #}
-{{ pagination.page_links|safe }}
+{{ pagination.page_links }}
 ```
 
 ## Pagination Object
