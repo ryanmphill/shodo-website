@@ -135,7 +135,12 @@ export function addMobileSidebarFunctionality(
     }
   });
 
+  let lastViewportWidth = window.innerWidth;
   const handleViewportResize = () => {
+    if (lastViewportWidth === window.innerWidth) {
+      return; // Width hasn't changed, do nothing
+    }
+    lastViewportWidth = window.innerWidth;
     if (window.innerWidth > mobileBreakpoint) {
       // Ensure sidebar is visible on larger screens
       sidebar.classList.remove("sidebar--open");
